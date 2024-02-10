@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Mosevang Ridecenter - CMS</title>
+    <link href="/backend/config.yml" type="text/yaml" rel="cms-config-url" />
     <script
       is:inline
       type="text/javascript"
@@ -23,7 +24,7 @@
         window.netlifyIdentity.on("init", (user: any) => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+              document.location.href = "/backend/";
             });
           }
         });

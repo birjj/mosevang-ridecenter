@@ -37,11 +37,9 @@ collections:
         fields:
           - { label: Titel, name: title, widget: string }
           - { label: Indhold, name: body, widget: markdown }
-          - { label: Kort, name: map, widget: map }
       - label: Galleri
         name: gallery
         file: src/content/pages/gallery.md
         fields:
           - { label: Titel, name: title, widget: string }
           - { label: Indhold, name: body, widget: markdown }
-          - { label: Billeder, name: images, widget: image }
