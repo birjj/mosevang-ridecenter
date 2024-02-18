@@ -1,0 +1,86 @@
+---
+
+---
+
+<nav>
+  <details>
+    <summary
+      >Navigation <span class="icon"
+        ><span class="icon-bar"></span><span class="icon-bar"></span><span
+          class="icon-bar"></span></span
+      ></summary
+    >
+    <ul>
+      <li><a>Test</a></li>
+      <li><a>ing</a></li>
+    </ul>
+  </details>
+</nav>
+
+<style>
+  nav {
+    background: rgb(var(--c-background-1, 221 221 221));
+    position: relative;
+    margin-bottom: 20px;
+  }
+  summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .icon {
+    display: inline-block;
+    padding: 3px 10px;
+  }
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: rgb(var(--c-foreground-1, 0 0 0));
+    margin-bottom: 4px;
+  }
+  .icon-bar:last-child {
+    margin-bottom: 0;
+  }
+  a {
+    display: block;
+  }
+  a.active {
+    background: rgb(var(--c-background-2, 238 238 238));
+  }
+  a:hover,
+  a:focus-visible {
+    background: #ccc;
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  li {
+    border: 0 solid #bbb;
+  }
+  li.active {
+    border-left-width: 1px;
+  }
+  li a {
+    color: rgb(var(--c-foreground-1, 0 0 0));
+    padding: 15px;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  @media (min-width: 768px) {
+    nav {
+      display: none;
+    }
+  }
+</style>

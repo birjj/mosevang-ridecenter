@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+
+import imageLogo from "../assets/logo.png";
+import imageBanner from "../assets/banner.png";
+---
+
+<header>
+  <div class="logo">
+    <Image src={imageLogo} alt="Mosevang Ridecenter logo" />
+  </div>
+  <div class="banner">
+    <Image src={imageBanner} alt="Mosevang Ridecenter banner" />
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .logo {
+    padding: 15px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: initial !important;
+  }
+  @media (max-width: 992px) {
+    header {
+      flex-direction: column;
+    }
+  }
+</style>

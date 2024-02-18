@@ -1,0 +1,59 @@
+---
+
+---
+
+<nav>
+  <ul>
+    <li><a>Test</a></li>
+    <li><a>ing</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    background: rgb(var(--c-background-1, 221 221 221));
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 0 15px;
+    flex-direction: row;
+  }
+  a {
+    display: block;
+  }
+  a.active {
+    background: rgb(var(--c-background-2, 238 238 238));
+  }
+  a:hover,
+  a:focus-visible {
+    background: #ccc;
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  li {
+    border: 0 solid #bbb;
+    border-left-width: 1px;
+  }
+  li:last-child {
+    border-right-width: 1px;
+  }
+  li a {
+    color: rgb(var(--c-foreground-1, 0 0 0));
+    padding: 15px;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+    }
+  }
+</style>
