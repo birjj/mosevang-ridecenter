@@ -1,13 +1,10 @@
 import type { PropsWithChildren } from "react";
 
-type LayoutProps = PropsWithChildren<{}>;
+import style from "./RootLayout.module.css";
 
-const RootLayout = ({ children }: LayoutProps) => {
-  return (
-    <>
-      <p>Bonjour :)</p>
-      {children}
-    </>
-  );
+export type LayoutProps = {};
+
+const RootLayout = ({ children }: PropsWithChildren<LayoutProps>) => {
+  return <div className={style.wrapper}>{children}</div>;
 };
 export default RootLayout;

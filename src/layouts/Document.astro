@@ -1,4 +1,6 @@
 ---
+import "@fontsource-variable/lora";
+
 interface Props {
   title: string;
 }
@@ -48,5 +50,31 @@ const { title } = Astro.props;
   body {
     margin: 0;
     line-height: inherit;
+  }
+</style>
+<style is:global>
+  :root {
+    --content-width: 54rem;
+    --gutter-width: 2rem;
+
+    --c-accent: rgb(37 34 252);
+  }
+  body {
+    font-size: 18px;
+    padding: 3rem 2rem;
+    background: #fefefe;
+    font-family: system-ui, sans-serif;
+  }
+  @media (max-width: 450px) {
+    :root {
+      --gutter-width: 0rem;
+    }
+    body {
+      padding: 3rem 1rem;
+    }
+  }
+  h1 {
+    font-family: "Lora Variable", serif;
+    font-weight: normal;
   }
 </style>

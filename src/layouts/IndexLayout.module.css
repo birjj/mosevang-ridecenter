@@ -1,0 +1,41 @@
+.hero {
+  font-size: 4.5rem;
+  line-height: 1;
+  text-wrap: balance;
+  text-align: center;
+  margin-block-end: 3rem;
+}
+@media (max-width: 960px) {
+  .hero {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 760px) {
+  .hero {
+    font-size: 3rem;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-block-end: 5rem;
+}
+nav > a {
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-decoration: none;
+  padding-inline: 2rem;
+}
+nav > a:not(.active) {
+  color: #444;
+}
+nav > a:hover,
+nav > a:focus-visible {
+  color: var(--c-accent);
+}

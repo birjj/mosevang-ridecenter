@@ -1,0 +1,45 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: src/assets/images
+public_folder: assets/images
+collections:
+  - name: pages
+    label: Sider
+    files:
+      - label: Velkommen
+        name: index
+        file: src/content/pages/index.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Indhold, name: body, widget: markdown }
+      - label: Faciliteter
+        name: facilities
+        file: src/content/pages/facilities.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Indhold, name: body, widget: markdown }
+      - label: Regler
+        name: rules
+        file: src/content/pages/rules.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Indhold, name: body, widget: markdown }
+      - label: Priser
+        name: prices
+        file: src/content/pages/prices.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Indhold, name: body, widget: markdown }
+      - label: Om os
+        name: about
+        file: src/content/pages/about.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Indhold, name: body, widget: markdown }
+      - label: Galleri
+        name: gallery
+        file: src/content/pages/gallery.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Indhold, name: body, widget: markdown }
