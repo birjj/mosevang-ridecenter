@@ -7,39 +7,16 @@ collections:
   - name: pages
     label: Sider
     files:
-      - label: Velkommen
+      - label: Hovedside
         name: index
-        file: src/content/pages/index.md
+        file: src/content/index.md
         fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Indhold, name: body, widget: markdown }
-      - label: Faciliteter
-        name: facilities
-        file: src/content/pages/facilities.md
-        fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Indhold, name: body, widget: markdown }
-      - label: Regler
-        name: rules
-        file: src/content/pages/rules.md
-        fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Indhold, name: body, widget: markdown }
-      - label: Priser
-        name: prices
-        file: src/content/pages/prices.md
-        fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Indhold, name: body, widget: markdown }
-      - label: Om os
-        name: about
-        file: src/content/pages/about.md
-        fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Indhold, name: body, widget: markdown }
-      - label: Galleri
-        name: gallery
-        file: src/content/pages/gallery.md
-        fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Indhold, name: body, widget: markdown }
+          - { label: Titel, name: title, widget: string, default: Mosevang Ridecenter }
+          - { label: Velkommen, name: body, widget: markdown, editor_components: [] }
+          - { label: Første billeder, name: primary_images, widget: image, choose_url: false }
+          - { label: Faciliteter, name: facilities, widget: markdown }
+          - { label: Facilitet billeder, name: facilities_images, wiget: image, choose_url: false }
+          - { label: Regler, name: rules, widget: markdown, editor_components: [] }
+          - { label: Priser, name: prices, widget: markdown, editor_components: [] }
+          - { label: Om os, name: about, widget: markdown, editor_components: [] }
+          - { label: Lokation, name: map, widget: map }
