@@ -7,28 +7,43 @@ collections:
   - name: pages
     label: Sider
     files:
-      - label: Hovedside
+      - label: Velkommen
         name: index
-        file: src/content/index.md
+        file: src/content/sections/index.md
         fields:
-          - { label: Titel, name: title, widget: string, default: Mosevang Ridecenter }
           - { label: Velkommen, name: body, widget: markdown, editor_components: [] }
-          - label: Første billeder
-            name: primary_images
+          - label: Billeder
+            name: images
             widget: list
             summary: '{{fields.image}}'
+            minimize_collapsed: true
             fields:
             - { name: image, label: Billede, widget: image, choose_url: false, allow_multiple: false }
-            - { name: alt, label: Billedbeskrivelse, widget: string }
-          - { label: Faciliteter, name: facilities, widget: markdown }
-          - label: Facilitet billeder
-            name: facility_images
+      - label: Faciliteter
+        name: facilities
+        file: src/content/sections/facilities.md
+        fields:
+          - { label: Faciliteter, name: body, widget: markdown, editor_components: [] }
+          - label: Billeder
+            name: images
             widget: list
             summary: '{{fields.image}}'
+            minimize_collapsed: true
             fields:
             - { name: image, label: Billede, widget: image, choose_url: false, allow_multiple: false }
-            - { name: alt, label: Billedbeskrivelse, widget: string }
-          - { label: Regler, name: rules, widget: markdown, editor_components: [] }
-          - { label: Priser, name: prices, widget: markdown, editor_components: [] }
-          - { label: Om os, name: about, widget: markdown, editor_components: [] }
+      - label: Regler
+        name: rules
+        file: src/content/sections/rules.md
+        fields:
+          - { label: Regler, name: body, widget: markdown, editor_components: [] }
+      - label: Priser
+        name: prices
+        file: src/content/sections/prices.md
+        fields:
+          - { label: Priser, name: body, widget: markdown, editor_components: [] }
+      - label: Om os
+        name: about
+        file: src/content/sections/about.md
+        fields:
+          - { label: Om os, name: body, widget: markdown, editor_components: [] }
           - { label: Lokation, name: map, widget: map }
