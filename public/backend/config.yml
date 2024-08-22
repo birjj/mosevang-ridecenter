@@ -16,6 +16,7 @@ collections:
           - label: Første billeder
             name: primary_images
             widget: list
+            summary: '{{fields.image}}'
             fields:
             - { name: image, label: Billede, widget: image, choose_url: false, allow_multiple: false }
             - { name: alt, label: Billedbeskrivelse, widget: string }
@@ -23,6 +24,7 @@ collections:
           - label: Facilitet billeder
             name: facility_images
             widget: list
+            summary: '{{fields.image}}'
             fields:
             - { name: image, label: Billede, widget: image, choose_url: false, allow_multiple: false }
             - { name: alt, label: Billedbeskrivelse, widget: string }

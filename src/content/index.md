@@ -1,11 +1,9 @@
 ---
 title: Mosevang Ridecenter
-primary_images: assets/images/img_4658.jpeg
 facilities: "Vi stiller alle faciliteter til rådighed. Opstaldning er baseret på
   selvpasning af heste og ponyer, samt obligatorisk deltagelse i turnusordning
   mht. ind/udlukning fra folde. Ligeledes forventes deltagelse i alm.
   vedligeholdelsesarbejde. "
-facilities_images: a
 rules: >-
   1. Faciliteter på Mosevang Ridecenter kan anvendes af pensionærer samt ryttere
   der har indløst ridehuskort. 
