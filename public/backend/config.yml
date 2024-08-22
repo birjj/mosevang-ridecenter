@@ -15,21 +15,17 @@ collections:
           - { label: Velkommen, name: body, widget: markdown, editor_components: [] }
           - label: Første billeder
             name: primary_images
-            widget: image
-            allow_multiple: true
-            media_library:
-              config:
-                multiple: true
-            choose_url: false
+            widget: list
+            fields:
+            - { name: image, label: Billede, widget: image, choose_url: false, allow_multiple: false }
+            - { name: alt, label: Billedbeskrivelse, widget: string }
           - { label: Faciliteter, name: facilities, widget: markdown }
           - label: Facilitet billeder
-            name: facilities_images
-            widget: image
-            allow_multiple: true
-            media_library:
-              config:
-                multiple: true
-            choose_url: false
+            name: facility_images
+            widget: list
+            fields:
+            - { name: image, label: Billede, widget: image, choose_url: false, allow_multiple: false }
+            - { name: alt, label: Billedbeskrivelse, widget: string }
           - { label: Regler, name: rules, widget: markdown, editor_components: [] }
           - { label: Priser, name: prices, widget: markdown, editor_components: [] }
           - { label: Om os, name: about, widget: markdown, editor_components: [] }
