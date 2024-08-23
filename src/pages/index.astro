@@ -61,7 +61,7 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
   <IndexLayout title="Mosevang Ridecenter">
     <div id="velkommen"></div>
     <IndexSection />
-    <ImageGrid>
+    <ImageGrid client:idle>
       {
         indexImages.map((entry) => (
           <Image
@@ -69,6 +69,7 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
             widths={[256, 512, entry.width]}
             sizes={`(max-width: 1000px) 512, 512px`}
             alt=""
+            data-album="index"
           />
         ))
       }
@@ -76,7 +77,7 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
 
     <h2 id="faciliteter">Faciliteter</h2>
     <FacilitySection />
-    <ImageGrid>
+    <ImageGrid client:idle>
       {
         facilityImages.map((entry) => (
           <Image
@@ -84,6 +85,7 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
             widths={[256, 512, entry.width]}
             sizes={`(max-width: 512px) 256px, (max-width: 1000px) 512px, 512px`}
             alt=""
+            data-album="facility"
           />
         ))
       }
