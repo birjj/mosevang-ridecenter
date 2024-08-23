@@ -15,13 +15,11 @@ const IndexLayout = ({
     <RootLayout>
       <h1 className={style.hero}>{title}</h1>
       <nav>
-        <a href="/" className={style.active}>
-          Velkommen
-        </a>
-        <a href="/faciliteter">Faciliteter</a>
-        <a href="/regler">Regler</a>
-        <a href="/priser">Priser</a>
-        <a href="/om-os">Om os</a>
+        <a href="#velkommen">Velkommen</a>
+        <a href="#faciliteter">Faciliteter</a>
+        <a href="#regler">Regler</a>
+        <a href="#priser">Priser</a>
+        <a href="#om-os">Om os</a>
       </nav>
       {children}
     </RootLayout>

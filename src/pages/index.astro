@@ -4,35 +4,97 @@ import IndexLayout from "@/layouts/IndexLayout";
 
 import {
   Content as IndexSection,
-  frontmatter as IndexFrontmatter,
+  frontmatter as indexFrontmatter,
 } from "@/content/sections/index.md";
 import {
   Content as FacilitySection,
-  frontmatter as FacilityFrontmatter,
+  frontmatter as facilityFrontmatter,
 } from "@/content/sections/facilities.md";
 import {
   Content as RulesSection,
-  frontmatter as RulesFrontmatter,
+  frontmatter as rulesFrontmatter,
 } from "@/content/sections/rules.md";
 import {
   Content as PricesSection,
-  frontmatter as PricesFrontmatter,
+  frontmatter as pricesFrontmatter,
 } from "@/content/sections/prices.md";
 import {
   Content as AboutSection,
-  frontmatter as AboutFrontmatter,
+  frontmatter as aboutFrontmatter,
 } from "@/content/sections/about.md";
+
+import ImageGrid from "@/components/ImageGrid";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+);
+const imagesFromFrontmatter = async (frontmatter: Record<string, any>) => {
+  if (!("images" in frontmatter) || !Array.isArray(frontmatter.images)) {
+    throw new Error(
+      "No 'images' array in given frontmatter, can't extract images"
+    );
+  }
+  const images: Promise<{ default: ImageMetadata }>[] = [];
+  for (const entry of frontmatter.images) {
+    if (!("image" in entry)) {
+      throw new Error(
+        `No 'image' in entry ${entry} from frontmatter, can't extract image`
+      );
+    }
+    const path: string =
+      "/src/" + (entry.image as string).replace(/^\/src\//, "");
+    if (!allImages[path]) {
+      console.log(allImages);
+      throw new Error(`Can't find image path '${path}' in list of images`);
+    }
+    images.push(allImages[path]());
+  }
+  return (await Promise.all(images)).map((entry) => entry.default);
+};
+
+const indexImages = await imagesFromFrontmatter(indexFrontmatter);
+const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
 ---
 
 <Document title="Mosevang Ridecenter - Velkommen">
   <IndexLayout title="Mosevang Ridecenter">
+    <div id="velkommen"></div>
     <IndexSection />
+    <ImageGrid>
+      {
+        indexImages.map((entry) => (
+          <Image
+            src={entry}
+            widths={[256, 512, entry.width]}
+            sizes={`(max-width: 1000px) 512, 512px`}
+            alt=""
+          />
+        ))
+      }
+    </ImageGrid>
+
     <h2 id="faciliteter">Faciliteter</h2>
     <FacilitySection />
+    <ImageGrid>
+      {
+        facilityImages.map((entry) => (
+          <Image
+            src={entry}
+            widths={[256, 512, entry.width]}
+            sizes={`(max-width: 512px) 256px, (max-width: 1000px) 512px, 512px`}
+            alt=""
+          />
+        ))
+      }
+    </ImageGrid>
+
     <h2 id="regler">Regler</h2>
     <RulesSection />
+
     <h2 id="priser">Priser</h2>
     <PricesSection />
+
     <h2 id="om-os">Om os</h2>
     <AboutSection />
   </IndexLayout>

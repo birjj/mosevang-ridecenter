@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-inline: 0;
+  margin-block: 2rem;
+}
+
+.grid > * {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+  height: 340px;
+}
+@media (max-width: 512px) {
+  .grid > * {
+    height: 200px;
+  }
+}
+.grid > *:nth-child(odd):last-child {
+  grid-column: span 2;
+}
