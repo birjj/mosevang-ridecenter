@@ -1,7 +1,7 @@
 ---
 map: '{"type":"Point","coordinates":[10.325149,55.3080718]}'
 ---
-## Mosevang Ridecenter
+### Mosevang Ridecenter
 
 v/Bente og Flemming Jensen  
 Allestedvej 36,  

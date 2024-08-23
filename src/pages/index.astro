@@ -1,28 +1,39 @@
 ---
 import Document from "@/layouts/Document.astro";
 import IndexLayout from "@/layouts/IndexLayout";
+
+import {
+  Content as IndexSection,
+  frontmatter as IndexFrontmatter,
+} from "@/content/sections/index.md";
+import {
+  Content as FacilitySection,
+  frontmatter as FacilityFrontmatter,
+} from "@/content/sections/facilities.md";
+import {
+  Content as RulesSection,
+  frontmatter as RulesFrontmatter,
+} from "@/content/sections/rules.md";
+import {
+  Content as PricesSection,
+  frontmatter as PricesFrontmatter,
+} from "@/content/sections/prices.md";
+import {
+  Content as AboutSection,
+  frontmatter as AboutFrontmatter,
+} from "@/content/sections/about.md";
 ---
 
 <Document title="Mosevang Ridecenter - Velkommen">
   <IndexLayout title="Mosevang Ridecenter">
-    <p>
-      Vi er et mindre, privat ridecenter/hestepension i Fangel, lige syd for
-      Odense, med hestevelfærd som højeste prioritet -- sunde, raske og
-      velfungerende heste og ponyer er en forudsætning for at heste/ponyer og
-      ryttere trives.
-    </p>
-    <p>
-      Vi stiller alle faciliteter til rådighed. Opstaldning er baseret på
-      selvpasning af heste og ponyer, samt obligatorisk deltagelse i
-      turnusordning mht. ind/udlukning fra folde. Ligeledes forventes deltagelse
-      i alm. vedligeholdelsesarbejde.
-    </p>
-    <p>
-      På Mosevang Ridecenter vægtes trivsel for heste og ejere højt. Dette
-      praktiseres bl.a. gennem gensidig respekt for hinanden, uanset hvilket
-      ridemæssigt niveau man er på. Vi lægger stor vægt på at der altid hersker
-      en god og venlig tone, at det er rart at komme på stedet, samt et social
-      positivt miljø.
-    </p>
+    <IndexSection />
+    <h2 id="faciliteter">Faciliteter</h2>
+    <FacilitySection />
+    <h2 id="regler">Regler</h2>
+    <RulesSection />
+    <h2 id="priser">Priser</h2>
+    <PricesSection />
+    <h2 id="om-os">Om os</h2>
+    <AboutSection />
   </IndexLayout>
 </Document>

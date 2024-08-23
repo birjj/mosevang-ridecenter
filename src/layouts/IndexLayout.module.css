@@ -21,7 +21,13 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-block-end: 5rem;
+  margin-block-end: 4rem;
+  position: sticky;
+  top: 0;
+  background: rgb(255 255 255 / 75%);
+  backdrop-filter: blur(12px);
+  margin-inline: 0;
+  padding-inline: var(--gutter-width);
 }
 nav > a {
   color: inherit;
@@ -30,7 +36,7 @@ nav > a {
   font-size: 0.75rem;
   line-height: 1rem;
   text-decoration: none;
-  padding-inline: 2rem;
+  padding: 1rem 2rem;
 }
 nav > a:not(.active) {
   color: #444;

@@ -3,6 +3,6 @@
   max-width: calc(var(--content-width) + var(--gutter-width) + var(--gutter-width));
   margin: 0 auto;
 }
-.wrapper > * {
+:where(.wrapper > *) {
   margin-inline: var(--gutter-width);
 }
