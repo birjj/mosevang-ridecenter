@@ -83,8 +83,13 @@ const { title } = Astro.props;
     margin-block-start: 8rem;
   }
 
+  ol {
+    margin-inline: 0;
+    padding-right: var(--gutter-width);
+  }
+
   table {
-    width: 100%;
+    width: calc(100% - 2 * var(--gutter-width));
     border-collapse: collapse;
     margin-block: 1.5rem;
   }
@@ -98,6 +103,10 @@ const { title } = Astro.props;
   }
   td:first-child:nth-last-child(2) ~ td {
     width: 40%;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 </style>
 <style is:global>

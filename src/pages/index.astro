@@ -1,6 +1,7 @@
 ---
 import Document from "@/layouts/Document.astro";
 import IndexLayout from "@/layouts/IndexLayout";
+import MapSection from "@/components/MapSection";
 
 import {
   Content as IndexSection,
@@ -98,6 +99,8 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
     <PricesSection />
 
     <h2 id="om-os">Om os</h2>
-    <AboutSection />
+    <MapSection location="Mosevang Ridecenter, Allestedvej 36, 5260 Odense">
+      <AboutSection />
+    </MapSection>
   </IndexLayout>
 </Document>
