@@ -82,4 +82,26 @@ const { title } = Astro.props;
   h2 {
     margin-block-start: 8rem;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: 1.5rem;
+  }
+  th:empty {
+    display: none;
+  }
+  th,
+  td {
+    padding: 0.5em;
+    border: 1px solid rgb(0 0 0 / 25%);
+  }
+  td:first-child:nth-last-child(2) ~ td {
+    width: 40%;
+  }
+</style>
+<style is:global>
+  .yamz__wrapper {
+    overflow-y: hidden;
+  }
 </style>
