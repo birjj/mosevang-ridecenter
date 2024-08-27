@@ -1,9 +1,5 @@
 ---
-images:
-  - image: assets/images/img_4658.jpeg
-  - image: assets/images/img_4661.jpeg
-  - image: assets/images/img_4665.jpeg
-  - image: assets/images/img_4660.jpeg
+images: []
 ---
 Vi er et mindre, privat ridecenter/hestepension i Fangel, lige syd for Odense, med hestevelfærd som højeste prioritet -- sunde, raske og velfungerende heste og ponyer er en forudsætning for at heste/ponyer og ryttere trives.
 
