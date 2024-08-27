@@ -24,6 +24,7 @@ import {
   frontmatter as aboutFrontmatter,
 } from "@/content/sections/about.md";
 
+import HeroImage from "@/assets/images/img_4661.jpeg";
 import ImageGrid from "@/components/ImageGrid";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
@@ -59,7 +60,23 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
 ---
 
 <Document title="Mosevang Ridecenter - Velkommen">
-  <IndexLayout title="Mosevang Ridecenter">
+  <IndexLayout>
+    <h1 class="title">Mosevang Ridecenter</h1>
+    <Image
+      class="hero-image"
+      src={HeroImage}
+      alt=""
+      widths={[256, 512, HeroImage.width]}
+      sizes={`(max-width: 1000px) 928px, 928px`}
+    />
+    <nav>
+      <a href="#velkommen">Velkommen</a>
+      <a href="#faciliteter">Faciliteter</a>
+      <a href="#regler">Regler</a>
+      <a href="#priser">Priser</a>
+      <a href="#om-os">Om os</a>
+    </nav>
+
     <div id="velkommen"></div>
     <IndexSection />
     <ImageGrid client:idle>
@@ -68,7 +85,7 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
           <Image
             src={entry}
             widths={[256, 512, entry.width]}
-            sizes={`(max-width: 1000px) 512, 512px`}
+            sizes={`(max-width: 1000px) 512px, 512px`}
             alt=""
             data-album="index"
           />
@@ -104,3 +121,78 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
     </MapSection>
   </IndexLayout>
 </Document>
+
+<style>
+  .title {
+    font-size: 4.5rem;
+    line-height: 1;
+    text-wrap: balance;
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+  @media (max-width: 960px) {
+    .title {
+      font-size: 3.5rem;
+    }
+  }
+  @media (max-width: 760px) {
+    .title {
+      font-size: 3rem;
+    }
+  }
+
+  .hero-image {
+    max-width: 100%;
+    max-height: 256px;
+    object-fit: cover;
+    margin-inline: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+  }
+  @media (max-width: 760px) {
+    .hero-image {
+      max-height: 128px;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-block-end: 2rem;
+    position: sticky;
+    top: 0;
+    background: rgb(255 255 255 / 75%);
+    backdrop-filter: blur(12px);
+    margin-inline: -1rem;
+    padding-inline: calc(var(--gutter-width) + 1rem);
+  }
+  nav > a {
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+  }
+  nav > a:not(.active) {
+    color: #444;
+  }
+  nav > a:hover,
+  nav > a:focus-visible {
+    color: var(--c-accent);
+  }
+
+  /* offset all link targets, to account for fixed nav */
+  :global([id]::before) {
+    content: "";
+    display: block;
+    height: 75px;
+    margin-top: -75px;
+    visibility: hidden;
+  }
+</style>
