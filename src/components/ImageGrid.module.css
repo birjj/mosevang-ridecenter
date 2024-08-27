@@ -5,6 +5,7 @@
   margin-inline: 0;
   margin-block: 2rem;
 }
+.grid:empty { display: none; }
 
 .grid > :not(astro-slot), .grid > astro-slot > * {
   width: 100%;
