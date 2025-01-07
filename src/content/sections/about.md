@@ -14,6 +14,6 @@ Mail: mosevang@mosevangridecenter.dk
 
 CVR.nr. 25607082
 
-Bank reg.nr. 6880 konto nr. 0002791118
+Bank reg.nr. 9070 konto nr. 2050392727
 
 Der kan også betales via MobilePay, kontakt os for mere information
