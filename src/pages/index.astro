@@ -29,19 +29,19 @@ import ImageGrid from "@/components/ImageGrid";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 const allImages = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+  "/src/assets/images/*.{jpeg,jpg,png,gif}",
 );
 const imagesFromFrontmatter = async (frontmatter: Record<string, any>) => {
   if (!("images" in frontmatter) || !Array.isArray(frontmatter.images)) {
     throw new Error(
-      "No 'images' array in given frontmatter, can't extract images"
+      "No 'images' array in given frontmatter, can't extract images",
     );
   }
   const images: Promise<{ default: ImageMetadata }>[] = [];
   for (const entry of frontmatter.images) {
     if (!("image" in entry)) {
       throw new Error(
-        `No 'image' in entry ${entry} from frontmatter, can't extract image`
+        `No 'image' in entry ${entry} from frontmatter, can't extract image`,
       );
     }
     const path: string =
@@ -75,6 +75,13 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
       <a href="#regler">Regler</a>
       <a href="#priser">Priser</a>
       <a href="#om-os">Om os</a>
+      <a href="https://www.facebook.com/groups/938032492936851/" target="_blank"
+        ><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+          ><title>Facebook</title><path fill="currentColor"
+            d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+          ></path></svg
+        >Facebook</a
+      >
     </nav>
 
     <div id="velkommen"></div>
@@ -185,6 +192,15 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
   nav > a:hover,
   nav > a:focus-visible {
     color: var(--c-accent);
+  }
+
+  nav > a > .icon {
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 1ch;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -0.4em;
   }
 
   /* offset all link targets, to account for fixed nav */
