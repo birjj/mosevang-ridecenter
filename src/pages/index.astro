@@ -186,6 +186,17 @@ const facilityImages = await imagesFromFrontmatter(facilityFrontmatter);
     text-decoration: none;
     padding: 1rem 2rem;
   }
+  @media (max-width: 900px) {
+    nav > a {
+      padding: 1rem 1rem;
+    }
+  }
+  @media (max-width: 680px) {
+    nav > a {
+      padding: 1rem 0.5rem;
+      margin-inline: auto;
+    }
+  }
   nav > a:not(.active) {
     color: #444;
   }
